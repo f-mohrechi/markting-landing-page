@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Ubuntu:wght@500;700&display=swap');
+
+:root {
+    --bg-color: #182039;
+    --orange-color: #db7049;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+}
+
+.wrapper {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+header {
+    padding: 50px 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h3 {
+    color: #fff;
+    font-size: 22px;
+}
+
+header ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+header ul li a {
+    color: #aba9b4;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all ease 0.3s;
+}
+
+header ul li a:hover {
+    color: var(--orange-color);
+}
+
+header ul li a.btn {
+    display: inline-block;
+    width: 180px;
+    height: 60px;
+    line-height: 60px;
+    background-color: var(--orange-color);
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 50px;
+    transition: all ease 0.3s;
+}
+
+header ul li a.btn:hover {
+    background-color: #808085;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 150px 0;
+}
+
+.discription{
+    width: 50%;
+    padding-right: 150px;
+}
+
+.discription p{
+    font-size: 28px;
+    line-height: 46px;
+    color: #fff;
+}
+
+.discription p span {
+    color: var(--orange-color);
+}
+
+.discription a{
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 30px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-top: 60px;
+}
+
+.discription a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background-color: var(--orange-color);
+    z-index: -1;
+    transition: all ease 0.5s;
+
+}
+
+.discription a:hover:before{
+    width: 100%;
+}
+
+
+.icon {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(520px, #f08f538c, transparent 50%);
+    margin-top: -50px;
+}
+
+.email {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--bg-color);
+    background-color: var(--orange-color);
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.social {
+    height: 100%;
+    animation: rotation 60s linear infinite;
+}
+
+.social i {
+    color: var(--orange-color);
+    border: 1px solid var(--orange-color);
+    padding: 15px;
+    border-radius: 50%;
+}
+
+@keyframes rotation {
+    100%{
+        transform: rotate(365deg);
+    }
+}
+
+.social i {
+    position: absolute;
+}
+
+.social i:nth-child(1) {
+    top: 0;
+    left: 42%;
+}
+
+.social i:nth-child(2) {
+    top: 25%;
+    right: 0;
+}
+
+.social i:nth-child(3) {
+    top: 70%;
+    left: 70%;
+}
+
+.social i:nth-child(4) {
+    top: 25%;
+    left: 0;
+}
+
+.social i:nth-child(5) {
+    top: 70%;
+    left: 10%;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+}
+
+.wave:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /*background: url(./1.svg) repeat-x -1000px 0;*/
+    opacity: 0.2;
+    animation: wave 60s linear infinite;
+}
+
+@keyframes wave {
+    50%{
+        background-position: 0 0;
+    }
+}
+
+.wave:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /*background: url(./1.svg) repeat-x 2732px 0;*/
+    opacity: 0.3;
+    animation: wave 120s linear infinite;
+}
+
+
+ul ul {
+    max-width: 250px;
+    position: absolute;
+    padding: 10px 0;
+    opacity: 0;
+    z-index: -999;
+    transition: all ease 0.5s;
+}
+
+ul li:hover ul {
+    opacity: 1;
+    z-index: 9;
+    padding: 30px 0;
+}
+
+ul ul li {
+    margin: 0;
+    width: 100%;
+}
+
+ul ul li a {
+    width: 100%;
+    display: inline-block;
+    padding: 20px;
+    background-color: #383a58;
+    color: #fff;
+}
+
+ul ul li:first-child a{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+ul ul li:last-child a{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+ul ul li a:hover{
+    background-color: var(--orange-color);
+    color: #fff;
+}
+
+
+
+
